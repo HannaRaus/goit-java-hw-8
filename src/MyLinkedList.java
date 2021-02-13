@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class MyLinkedList<E> {
-    int size = 0;
+    private int size;
     MyNode<E> first;
     MyNode<E> last;
 
@@ -68,22 +68,26 @@ public class MyLinkedList<E> {
 
     }
 
-    @Override
-    public String toString() {
-        Object[] nodes = new Object[size];
-        int i = 0;
-        for (MyLinkedList.MyNode<E> x = first; x != null; x = x.next, i++) {
-            nodes[i] = x.item;
-        }
-        return Arrays.toString(nodes);
-    }
-
     MyNode<E> findNodeByIndex(int index) {
         MyNode<E> target = first;
         for (int i = 0; i < index; i++) {
             target = target.next;
         }
         return target;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(toArray());
+    }
+
+    private E[] toArray() {
+        Object[] nodes = new Object[size];
+        int i = 0;
+        for (MyNode<E> x = first; x != null; x = x.next, i++) {
+            nodes[i] = x.item;
+        }
+        return (E[]) nodes;
     }
 
     private void checkIndex(int index) {
@@ -97,7 +101,7 @@ public class MyLinkedList<E> {
         return index >= 0 && index < size;
     }
 
-    private static class MyNode<E> {
+    class MyNode<E> {
         E item;
         MyNode<E> next;
         MyNode<E> prev;

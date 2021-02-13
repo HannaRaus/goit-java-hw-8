@@ -14,6 +14,7 @@ public class MyQueue<E> {
         counter++;
     }
 
+
     public void remove(int index) {
         if (index > queue.length) {
             System.out.println("Елемент не знайдено");
