@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class MyArrayList<E> {
 
-    private final int DEFAULT_SIZE = 5;
+    private final int DEFAULT_SIZE = 10;
     private E[] elements = (E[]) new Object[DEFAULT_SIZE];
     private int size = 0;
 
