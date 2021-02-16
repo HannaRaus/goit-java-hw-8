@@ -1,35 +1,70 @@
 public class Main {
     public static void main(String[] args) {
-        MyHashMap<Integer, String> myHashMap = new MyHashMap<>();
-        myHashMap.put(1, "milk");
-        myHashMap.put(2, "bread");
-        myHashMap.put(33, "butter");
-        myHashMap.put(34, "cheese");
-        myHashMap.put(49, "orange");
-        myHashMap.put(4, "333");
-        System.out.println("After add elements:");
-        System.out.println(myHashMap + " size - " + myHashMap.size());
+        MyLinkedList<String> list = new MyLinkedList<>();
+        list.add("Milk");
+        list.add("Bread");
+        list.add("Orange");
+        list.add("Cheese");
+        list.add("Apple");
 
-        myHashMap.put(1, "apple");
-        myHashMap.put(34, "111");
-        myHashMap.put(33, "pine");
-        System.out.println();
-        System.out.println("After add elements with same key:");
-        System.out.println(myHashMap + " size - " + myHashMap.size());
-
-        System.out.println();
-        System.out.println("Element to get:");
-        System.out.println(myHashMap.get(33));
-
-        int index = 49;
-        System.out.println();
-        System.out.println("After remove - " + myHashMap.get(index));
-        myHashMap.remove(index);
-        System.out.println(myHashMap + " size - " + myHashMap.size());
+        System.out.println("MyLinkedList after add:");
+        System.out.println(list);
+        System.out.println("Size - " + list.size());
         System.out.println();
 
-        myHashMap.clear();
-        System.out.println("Map after clear - " + myHashMap + " size - " + myHashMap.size());
+        list.remove(2);
+        System.out.println("MyLinkedList after remove:");
+        System.out.println(list);
+        System.out.println("Size - " + list.size());
+        System.out.println();
+
+        System.out.println("Element to get - " + list.get(1));
+        System.out.println("MyLinkedList after get:");
+        System.out.println(list);
+        System.out.println("Size - " + list.size());
+        System.out.println();
+
+        list.clear();
+        System.out.println("MyLinkedList after clear:");
+        System.out.println(list);
+        System.out.println("Size - " + list.size());
+
+        System.out.println("----------------------------------------------");
+
+        MyStack<String> stack = new MyStack<>();
+        stack.push("Milk");
+        stack.push("Bread");
+        stack.push("Orange");
+        stack.push("Cheese");
+        stack.push("Apple");
+
+        System.out.println("MyStack after push:");
+        System.out.println(stack);
+        System.out.println("Size - " + stack.size());
+        System.out.println();
+
+        stack.remove(2);
+        System.out.println("MyStack after remove:");
+        System.out.println(stack);
+        System.out.println("Size - " + stack.size());
+        System.out.println();
+
+        System.out.println("Element to peek - " + stack.peek());
+        System.out.println("MyStack after peek:");
+        System.out.println(stack);
+        System.out.println("Size - " + stack.size());
+        System.out.println();
+
+        System.out.println("Element to pop - " + stack.pop());
+        System.out.println("MyStack after pop:");
+        System.out.println(stack);
+        System.out.println("Size - " + stack.size());
+        System.out.println();
+
+        stack.clear();
+        System.out.println("MyStack after clear:");
+        System.out.println(stack);
+        System.out.println("Size - " + stack.size());
 
 
     }
